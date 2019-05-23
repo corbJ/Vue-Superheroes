@@ -1,4 +1,4 @@
-# dc-marvel-app
+# Vue Superheroes
 
 > 1.0.0
 
