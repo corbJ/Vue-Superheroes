@@ -1,0 +1,54 @@
+// Google Font Import
+
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,700&display=swap');
+
+// SASS Imports
+
+@import "vars";
+@import "reset";
+@import "framework";
+@import "dc-marvel";
+@import "box";
+
+#app {
+	transition: background 200ms;
+	font-family: 'IBM Plex Sans', Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// REM Reset
+
+html {
+	font-size: 20px;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background-image: url(~@/assets/images/home.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+// Homepage
+
+.home #app {
+	background-color: rgba($c-white,0.95);
+}
+
+// Back Button (TopLinks)
+
+.back-button {
+	display: inline-block;
+	background: $c-white;
+	padding: 0.5em 1em;
+	margin-left: 1rem;
+	line-height: 1;
+	text-decoration: none;
+	border-radius: 1rem;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
