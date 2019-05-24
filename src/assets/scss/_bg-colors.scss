@@ -1,0 +1,47 @@
+// Common
+
+body.home #app {
+	background-color: rgba($c-white,0.95);
+}
+
+// DC
+
+body.dc #app {
+	background-color: rgba($c-dc,0.95);
+}
+
+// a.dc {
+// 	background-color: $c-dc;
+
+// 	&:hover {
+// 		background-color: lighten($c-dc, 10%);
+// 	}
+// }
+
+// span.dc {
+// 	color: $c-dc;
+// }
+
+// Marvel
+
+body.marvel #app {
+	background-color: rgba($c-marvel,0.95);
+}
+
+// a.marvel {
+// 	background-color: $c-marvel;
+
+// 	&:hover {
+// 		background-color: lighten($c-marvel, 10%);
+// 	}
+// }
+
+// span.marvel {
+// 	color: $c-marvel;
+// }
+
+// All
+
+body.all #app {
+	background-color: rgba(#000,0.85);
+}

@@ -3,10 +3,10 @@
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     grid-gap: 1.5rem;
-    margin: 1rem;
+    margin: 1.5rem;
 
     @media screen and (min-width: 50rem) {
-		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 	}
 }
 
@@ -14,16 +14,36 @@
 	background: $c-white;
 	border-radius: 5px;
 	box-shadow: 0 1px 3px rgba($c-black,0.25);
-	padding: 1rem;
+	
+	// Avoid border-radius issues if setting a background on a child
+	overflow: hidden;
 
-	p {
+	// Could downsize the component
+	// font-size: 0.8em; // 16px
+
+	p {	
+		font-size: 0.75em; // 15px
+		// font-size: (16/18) * 1em; Should be used when downsizing the component
+
+		// Ellipsis
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		font-size: 0.8em;
+
+
+		
 
 		&:last-child {
 			margin-bottom: 0;
 		}
 	}
+}
+
+.box-header,
+.box-content {
+	padding: 1rem;
+}
+
+.box-header {
+	border-bottom: 1px solid $c-light-grey;
 }

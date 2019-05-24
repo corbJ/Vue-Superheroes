@@ -1,9 +1,9 @@
 <template>
-  <div class="container df fw f1 ai-c jc-c">
-    <router-link to="/dc-heroes" class="dc t300">{{ $t('message.dc_link') }}</router-link>
-    <router-link to="/marvel-heroes" class="marvel t300">{{ $t('message.marvel_link') }}</router-link>
-    <router-link to="/all-heroes" class="t300">{{ $t('message.all_link') }}</router-link>
-  </div>
+  <v-flex text-xs-center>
+    <v-btn to="/dc-heroes" round color="primary">{{ $t('message.dc_link') }}</v-btn>
+    <v-btn to="/marvel-heroes" round color="secondary">{{ $t('message.marvel_link') }}</v-btn>
+    <v-btn to="/all-heroes" round color="accent">{{ $t('message.all_link') }}</v-btn>
+  </v-flex>
 </template>
 
 <script>
@@ -13,32 +13,10 @@ export default {
 </script>
 
 <style scoped>
-  #app {
-    background-color: rgba(#fff,0.95);
-  }
-  a {
-    margin: 2rem;
-    padding: 1.5rem;
-    border-radius: 3rem;
-    text-decoration: none;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    font-weight: bold;
-    color: #fff;
-  }
-
-  a:not(.dc):not(.marvel) {
-    transition: all 300ms;
-    background: #000;
-  }
-
-  a:not(.dc):not(.marvel):hover {
-    background: #444;
-  }
-
-  @media screen and (max-width: 1060px) {
-    
-    .container  {
-      flex-direction: column;
-    }
+  .v-btn {
+    margin: 1em;
+    padding: 1.5em;
+    border-radius: 3em;
+    font-size: 0.9em;
   }
 </style>
