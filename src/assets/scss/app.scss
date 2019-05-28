@@ -2,48 +2,52 @@
 
 @import "vars";
 @import "reset";
-@import "framework";
-@import "bg-colors";
-@import "box";
-
-// REM Reset
+// @import "framework";
+// @import "bg-colors";
+// @import "box";
 
 html {
-	font-size: 20px;
+	font-size: 20px; // REM Reset
 	overflow-y: auto;
 }
 
-// html,
-// body {
-// 	height: 100%;
-// }
-
 body {
 	font-family: 'IBM Plex Sans', Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 
-	// Body background image 
-	background-image: url(~@/assets/images/home.jpg);
+	// Body background image
+
+	background-image: url(~@/assets/images/heroes.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
 
+// Background colors
+
 #app {
-	// Enables background-color transitions between views
-	transition: background 200ms;
+	transition: background 200ms; // background-color transitions between views
+
+	// Home (we could set this as the default value for #app and remove the class home in index.js)
+
+	.home & {
+		background-color: rgba($c-white,0.95);
+	}
+
+	// DC Heroes
+
+	.dc & {
+		background-color: rgba($c-dc,0.95);
+	}
+
+	// Marvel Heroes
+
+	.marvel & {
+		background-color: rgba($c-marvel,0.95);
+	}
+
+	// All Heroes
+
+	.all & {
+		background-color: rgba(#000,0.85);
+	}
 }
-
-// // Back Button (TopLinks)
-
-// .back-button {
-// 	display: inline-block;
-// 	background: $c-white;
-// 	padding: 0.5em 1em;
-// 	margin-left: 1rem;
-// 	line-height: 1;
-// 	text-decoration: none;
-// 	border-radius: 1rem;
-// 	box-shadow: 0 1px 3px rgba(0,0,0,0.25);
-// }

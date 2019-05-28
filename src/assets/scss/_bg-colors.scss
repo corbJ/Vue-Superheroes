@@ -10,17 +10,17 @@ body.dc #app {
 	background-color: rgba($c-dc,0.95);
 }
 
-// a.dc {
-// 	background-color: $c-dc;
+a.dc {
+	background-color: $c-dc;
 
-// 	&:hover {
-// 		background-color: lighten($c-dc, 10%);
-// 	}
-// }
+	&:hover {
+		background-color: lighten($c-dc, 10%);
+	}
+}
 
-// span.dc {
-// 	color: $c-dc;
-// }
+span.dc {
+	color: $c-dc;
+}
 
 // Marvel
 
@@ -28,17 +28,17 @@ body.marvel #app {
 	background-color: rgba($c-marvel,0.95);
 }
 
-// a.marvel {
-// 	background-color: $c-marvel;
+a.marvel {
+	background-color: $c-marvel;
 
-// 	&:hover {
-// 		background-color: lighten($c-marvel, 10%);
-// 	}
-// }
+	&:hover {
+		background-color: lighten($c-marvel, 10%);
+	}
+}
 
-// span.marvel {
-// 	color: $c-marvel;
-// }
+span.marvel {
+	color: $c-marvel;
+}
 
 // All
 
