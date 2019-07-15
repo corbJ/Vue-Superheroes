@@ -32,8 +32,8 @@ let locale = navigator.language
 const i18n = new VueI18n({
   fallbackLocale: 'fr-FR',
   locale: locale,
-  messages,
-  silentTranslationWarn: true
+  messages
+  // silentTranslationWarn: true
 })
 
 /* eslint-disable no-new */

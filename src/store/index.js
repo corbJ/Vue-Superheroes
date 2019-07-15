@@ -18,7 +18,7 @@ export default new Vuex.Store({
     // }
   },
   getters: {
-    getDCHeroes: state => state.dc,
+    getDcHeroes: state => state.dc,
     getMarvelHeroes: state => state.marvel
   },
   actions: {
