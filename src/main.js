@@ -3,6 +3,7 @@
 
 import 'babel-polyfill' // IE11 & Safari 9 support for Vuetify
 import Vue from 'vue'
+import store from '@/store'
 import VueI18n from 'vue-i18n'
 import messages from '@/lang/messages'
 import Vuetify from 'vuetify'
@@ -21,8 +22,7 @@ Vue.use(Vuetify, {
   },
   theme: {
     primary: '#0282f9', // DC Comics
-    secondary: '#e62429',
-    accent: '#000'
+    secondary: '#e62429' // Marvel Comics
   }
 })
 
@@ -32,14 +32,29 @@ let locale = navigator.language
 const i18n = new VueI18n({
   fallbackLocale: 'fr-FR',
   locale: locale,
-  messages
+  messages,
+  silentTranslationWarn: true
 })
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   i18n,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  computed: {
+    count () {
+      return store.state.count
+    }
+  },
+  methods: {
+    increment () {
+      store.commit('increment')
+    },
+    decrement () {
+      store.commit('decrement')
+    }
+  }
 })

@@ -1,44 +1,17 @@
 <template>
-  <v-container fluid grid-list-md pa-0>
-    <v-layout row wrap>
-      <v-flex sm6 md6 lg4 v-for="data in dc_heroes" v-bind:key="data.id">
-        <v-card>
-          <v-card-title>
-            <h2 class="text-truncate">{{ data.superhero }}</h2>
-          </v-card-title>
-          <v-card-text class="py-0">
-              <p class="subheading text-truncate"><b>{{ $t('message.publisher') }}</b> <span class="primary--text">{{ data.publisher }}</span></p>
-              <p class="subheading text-truncate"><b>{{ $t('message.alter_ego') }}</b> {{ data.alter_ego }}</p>
-              <p class="subheading text-truncate"><b>{{ $t('message.first_appearance') }}</b> {{ data.first_appearance }}</p>
-              <p class="subheading mb-0 text-truncate"><b>{{ $t('message.characters') }}</b> {{ data.characters }}</p>
-          </v-card-text>
-          <v-card-actions>
-            <v-btn icon>
-              <v-icon>delete</v-icon>
-            </v-btn>
-            <v-btn icon>
-              <v-icon>edit</v-icon>
-            </v-btn>
-            <v-spacer></v-spacer>
-            <v-btn icon>
-              <v-icon>favorite</v-icon>
-            </v-btn>
-            <v-btn icon>
-              <v-icon>share</v-icon>
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-flex>
-      <AddButton />
-    </v-layout>
-  </v-container>
+  <v-layout row wrap>
+    <HeroCard v-for="hero in dc_heroes" :key="hero.id" :hero="hero"></HeroCard>
+    <AddButton />
+  </v-layout>
 </template>
 
 <script>
 import dc from '@/data/dc.json'
+import HeroCard from './HeroCard'
 import AddButton from './AddButton'
 export default {
   components: {
+    HeroCard,
     AddButton
   },
   name: 'DcHeroes',

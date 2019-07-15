@@ -5,7 +5,7 @@ import Home from '@/components/Home'
 // import TopLinks from '@/components/TopLinks'
 import DcHeroes from '@/components/DcHeroes'
 import MarvelHeroes from '@/components/MarvelHeroes'
-import AllHeroes from '@/components/AllHeroes'
+// import AllHeroes from '@/components/AllHeroes'
 
 Vue.use(Router)
 
@@ -28,12 +28,13 @@ export default new Router({
       name: 'MarvelHeroes',
       component: MarvelHeroes,
       meta: { bodyClass: 'marvel' }
-    },
-    {
-      path: '/all-heroes',
-      name: 'AllHeroes',
-      component: AllHeroes,
-      meta: { bodyClass: 'all' }
     }
+    // ,
+    // {
+    //   path: '/all-heroes',
+    //   name: 'AllHeroes',
+    //   component: AllHeroes,
+    //   meta: { bodyClass: 'all' }
+    // }
   ]
 })

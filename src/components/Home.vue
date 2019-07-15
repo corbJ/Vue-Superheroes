@@ -1,22 +1,29 @@
 <template>
-  <v-flex text-xs-center>
-    <v-btn to="/dc-heroes" round color="primary">{{ $t('message.dc_link') }}</v-btn>
-    <v-btn to="/marvel-heroes" round color="secondary">{{ $t('message.marvel_link') }}</v-btn>
-    <v-btn to="/all-heroes" round color="accent">{{ $t('message.all_link') }}</v-btn>
-  </v-flex>
+  <v-layout row wrap>
+    <HeroCard v-for="hero in dc_heroes" :key="hero.id" :hero="hero">
+    </HeroCard>
+    <HeroCard v-for="hero in marvel_heroes" :key="hero.id" :hero="hero">
+    </HeroCard>
+    <AddButton />
+  </v-layout>
 </template>
 
 <script>
+import dc from '@/data/dc.json'
+import marvel from '@/data/marvel.json'
+import HeroCard from './HeroCard'
+import AddButton from './AddButton'
 export default {
-  name: 'Home'
+  components: {
+    HeroCard,
+    AddButton
+  },
+  name: 'Home',
+  data () {
+    return {
+      dc_heroes: dc,
+      marvel_heroes: marvel
+    }
+  }
 }
 </script>
-
-<style scoped>
-  .v-btn {
-    margin: 1em;
-    padding: 1.5em;
-    border-radius: 3em;
-    font-size: 0.9em;
-  }
-</style>
