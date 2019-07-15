@@ -1,44 +1,29 @@
 <template>
-  <div class="container df fw f1 ai-c jc-c">
-    <router-link to="/dc-heroes" class="dc t300">{{ $t('message.dc_link') }}</router-link>
-    <router-link to="/marvel-heroes" class="marvel t300">{{ $t('message.marvel_link') }}</router-link>
-    <router-link to="/all-heroes" class="t300">{{ $t('message.all_link') }}</router-link>
-  </div>
+  <v-layout row wrap>
+    <HeroCard v-for="hero in dc_heroes" :key="hero.id" :hero="hero">
+    </HeroCard>
+    <HeroCard v-for="hero in marvel_heroes" :key="hero.id" :hero="hero">
+    </HeroCard>
+    <AddButton />
+  </v-layout>
 </template>
 
 <script>
+import dc from '@/data/dc.json'
+import marvel from '@/data/marvel.json'
+import HeroCard from './HeroCard'
+import AddButton from './AddButton'
 export default {
-  name: 'Home'
-}
-</script>
-
-<style scoped>
-  #app {
-    background-color: rgba(#fff,0.95);
-  }
-  a {
-    margin: 2rem;
-    padding: 1.5rem;
-    border-radius: 3rem;
-    text-decoration: none;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    font-weight: bold;
-    color: #fff;
-  }
-
-  a:not(.dc):not(.marvel) {
-    transition: all 300ms;
-    background: #000;
-  }
-
-  a:not(.dc):not(.marvel):hover {
-    background: #444;
-  }
-
-  @media screen and (max-width: 1060px) {
-    
-    .container  {
-      flex-direction: column;
+  components: {
+    HeroCard,
+    AddButton
+  },
+  name: 'Home',
+  data () {
+    return {
+      dc_heroes: dc,
+      marvel_heroes: marvel
     }
   }
-</style>
+}
+</script>

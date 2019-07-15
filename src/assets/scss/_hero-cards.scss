@@ -1,0 +1,10 @@
+.hero-card {
+
+	&--dc &__publisher {
+		color: var(--v-primary-base);
+	}
+
+	&--marvel &__publisher {
+		color: var(--v-secondary-base);
+	}
+}

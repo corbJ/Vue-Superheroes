@@ -1,24 +1,19 @@
 <template>
-  <div class="dc container w100">
-    <div class="box-container">
-      <div v-for="data in dc_heroes" v-bind:key="data.id" class="box">
-        <h2>{{ data.superhero }}</h2>
-        <p><b>{{ $t('message.publisher') }}</b> <span class="dc">{{ data.publisher }}</span></p>
-        <p><b>{{ $t('message.alter_ego') }}</b> {{ data.alter_ego }}</p>
-        <p><b>{{ $t('message.first_appearance') }}</b> {{ data.first_appearance }}</p>
-        <p><b>{{ $t('message.characters') }}</b> {{ data.characters }}</p>
-      </div>
-    </div>
-  </div>
+  <v-layout row wrap>
+    <HeroCard v-for="hero in dc_heroes" :key="hero.id" :hero="hero"></HeroCard>
+    <AddButton />
+  </v-layout>
 </template>
 
 <script>
 import dc from '@/data/dc.json'
-// import TopLinks from './TopLinks'
+import HeroCard from './HeroCard'
+import AddButton from './AddButton'
 export default {
-  // components: {
-  //   TopLinks
-  // },
+  components: {
+    HeroCard,
+    AddButton
+  },
   name: 'DcHeroes',
   data () {
     return {

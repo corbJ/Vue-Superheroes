@@ -1,8 +1,8 @@
 export default {
-  'en-US': {
+  'en': {
     message: {
-      dc_link: 'DC Comics Heroes',
-      marvel_link: 'Marvel Heroes',
+      dc_link: 'DC Comics',
+      marvel_link: 'Marvel',
       all_link: 'See All Heroes',
       publisher: 'Publisher:',
       alter_ego: 'Alter Ego:',
@@ -12,8 +12,8 @@ export default {
   },
   'fr-FR': {
     message: {
-      dc_link: 'Les héroes DC Comics',
-      marvel_link: 'Les héros Marvel',
+      dc_link: 'DC Comics',
+      marvel_link: 'Marvel',
       all_link: 'Voir tous les héros',
       publisher: 'Éditeur :',
       alter_ego: 'Alter égo :',

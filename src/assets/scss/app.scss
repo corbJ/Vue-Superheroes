@@ -6,49 +6,109 @@
 
 @import "vars";
 @import "reset";
-@import "framework";
-@import "dc-marvel";
-@import "box";
-
-#app {
-	transition: background 200ms;
-	font-family: 'IBM Plex Sans', Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-// REM Reset
+@import "hero-cards";
 
 html {
-	font-size: 20px;
-}
-
-html,
-body {
-	height: 100%;
+	font-size: 20px; // REM Reset
+	overflow-y: auto;
 }
 
 body {
-	background-image: url(~@/assets/images/home.jpg);
+	font-family: 'IBM Plex Sans', Avenir, Helvetica, Arial, sans-serif;
+
+	// Body background image
+
+	background-image: url(~@/assets/images/heroes.jpg);
+	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
 
-// Homepage
+// Pages background colors
 
-.home #app {
-	background-color: rgba($c-white,0.95);
+#app {
+	transition: background 200ms; // background-color transitions between views
+
+	// Home (we could set this as the default value for #app and remove the class home in index.js)
+
+	.home & {
+		// background-color: rgba($c-white,0.95);
+		background-color: rgba($c-black, 0.85);
+	}
+
+	// DC Heroes
+
+	.dc & {
+		background-color: rgba($c-dc,0.95);
+	}
+
+	// Marvel Heroes
+
+	.marvel & {
+		background-color: rgba($c-marvel,0.95);
+	}
+
+	// All Heroes
+
+	// .all & {
+	// 	background-color: rgba(#000,0.85);
+	// }
 }
 
-// Back Button (TopLinks)
+// Menu Buttons
 
-.back-button {
-	display: inline-block;
-	background: $c-white;
-	padding: 0.5em 1em;
-	margin-left: 1rem;
-	line-height: 1;
-	text-decoration: none;
-	border-radius: 1rem;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+.dc-btn,
+.marvel-btn {
+	font-size: 16px;
+
+	&.v-btn--active:before,
+	&.v-btn:focus:before,
+	&.v-btn:hover:before {
+		background: transparent;
+	}
+
+	.v-btn__content:after {
+		content: "";
+		position: absolute;
+		left: 0; bottom: 0; right: 0;
+		border-bottom: 2px solid transparent;
+		transform-origin: left;
+		transform: scaleX(0);
+		transition: all 300ms;
+	}
+
+	&.v-btn--active,
+	&.v-btn:focus,
+	&.v-btn:hover {
+
+		.v-btn__content:after {
+			transform: scaleX(1);
+		}
+	}
+}
+
+.dc-btn {
+
+	&.v-btn--active,
+	&.v-btn:focus,
+	&.v-btn:hover {
+		color: var(--v-primary-base);
+
+		.v-btn__content:after {
+			border-color: var(--v-primary-base);
+		}
+	}
+}
+
+.marvel-btn {
+
+  &.v-btn--active,
+  &.v-btn:focus,
+  &.v-btn:hover {
+    color: var(--v-secondary-base);
+
+    .v-btn__content:after {
+      border-color: var(--v-secondary-base);
+    }
+  }
 }
