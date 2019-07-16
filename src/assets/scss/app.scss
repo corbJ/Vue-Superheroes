@@ -47,12 +47,6 @@ body {
 	.marvel & {
 		background-color: rgba($c-marvel,0.95);
 	}
-
-	// All Heroes
-
-	// .all & {
-	// 	background-color: rgba(#000,0.85);
-	// }
 }
 
 // Menu Buttons
@@ -111,4 +105,21 @@ body {
       border-color: var(--v-secondary-base);
     }
   }
+}
+
+// Add Hero Button
+
+.add-hero-btn {
+	width: auto !important;
+	border-radius: 72px;
+	padding: 0 26px 0 20px;
+
+	.v-btn__content {
+		font-size: 15px;
+		font-weight: bold;
+	}
+
+	.v-icon {
+		margin-right: 6px;
+	}
 }

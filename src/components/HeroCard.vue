@@ -12,24 +12,31 @@
       </v-card-text>
       <v-card-actions>
         <v-btn icon>
-          <v-icon color="black">delete</v-icon>
+          <v-icon color="black" @click="removeHeroAction(hero)">delete</v-icon>
         </v-btn>
         <v-btn icon>
           <v-icon color="grey" class="text--darken-3">edit</v-icon>
         </v-btn>
         <v-spacer></v-spacer>
-        <v-btn icon>
-          <v-icon>favorite</v-icon>
+        <v-btn icon @click="changeFavoriteStatusAction(hero)">
+          <v-icon :class="{ 'red--text' : hero.bookmark == true, '' : hero.bookmark == false}">favorite</v-icon>
         </v-btn>
       </v-card-actions>
     </v-card>
   </v-flex>
 </template>
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'HeroCard',
   props: {
     hero: { type: Object, default: null }
+  },
+  methods: {
+    ...mapActions([
+      'changeFavoriteStatusAction',
+      'removeHeroAction'
+    ])
   }
 }
 </script>

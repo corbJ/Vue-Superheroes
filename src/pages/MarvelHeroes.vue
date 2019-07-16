@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import { mapGetters } from 'Vuex'
-import HeroCard from './HeroCard'
-import AddButton from './AddButton'
+import { mapGetters } from 'vuex'
+import HeroCard from '@/components/HeroCard'
+import AddButton from '@/components/AddButton'
 export default {
   components: {
     HeroCard,

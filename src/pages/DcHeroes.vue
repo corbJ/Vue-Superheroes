@@ -7,8 +7,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import HeroCard from './HeroCard'
-import AddButton from './AddButton'
+import HeroCard from '@/components/HeroCard'
+import AddButton from '@/components/AddButton'
 export default {
   components: {
     HeroCard,
