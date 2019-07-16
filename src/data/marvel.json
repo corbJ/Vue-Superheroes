@@ -1,72 +1,92 @@
 [
   {
+      "id":10,
       "superhero":"Spider Man", 
       "publisher":"Marvel Comics", 
       "alter_ego":"Peter Parker",
       "first_appearance":"Amazing Fantasy #15",
-      "characters":"Peter Parker"
+      "characters":"Peter Parker",
+      "bookmark": false
   },
   {
+      "id":11,
       "superhero":"Captain America", 
       "publisher":"Marvel Comics", 
       "alter_ego":"Steve Rogers",
       "first_appearance":"Captain America Comics #1",
-      "characters":"Steve Rogers"
+      "characters":"Steve Rogers",
+      "bookmark": false
   },
   {
+      "id":12,
       "superhero":"Iron Man", 
       "publisher":"Marvel Comics", 
       "alter_ego":"Tony Stark",
       "first_appearance":"Tales of Suspense #39",
-      "characters":"Tony Stark"
+      "characters":"Tony Stark",
+      "bookmark": false
   },
   {
+      "id":13,
       "superhero":"Thor", 
       "publisher":"Marvel Comics", 
       "alter_ego":"Thor Odinson",
       "first_appearance":"Journey into Myster #83",
-      "characters":"Thor Odinson"
+      "characters":"Thor Odinson",
+      "bookmark": false
   },
   {
+      "id":14,
       "superhero":"Hulk", 
       "publisher":"Marvel Comics", 
       "alter_ego":"Bruce Banner",
       "first_appearance":"The Incredible Hulk #1",
-      "characters":"Bruce Banner"
+      "characters":"Bruce Banner",
+      "bookmark": false
   },
   {
+      "id":15,
       "superhero":"Wolverine", 
       "publisher":"Marvel Comics", 
       "alter_ego":"James Howlett",
       "first_appearance":"The Incredible Hulk #180",
-      "characters":"James Howlett"
+      "characters":"James Howlett",
+      "bookmark": false
   },
   {
+      "id":16,
       "superhero":"Daredevil", 
       "publisher":"Marvel Comics", 
       "alter_ego":"Matthew Michael Murdock",
       "first_appearance":"Daredevil #1",
-      "characters":"Matthew Michael Murdock"
+      "characters":"Matthew Michael Murdock",
+      "bookmark": false
   },
   {
+      "id":17,
       "superhero":"Hawkeye", 
       "publisher":"Marvel Comics", 
       "alter_ego":"Clinton Francis Barton",
       "first_appearance":"Tales of Suspense #57",
-      "characters":"Clinton Francis Barton"
+      "characters":"Clinton Francis Barton",
+      "bookmark": false
   },
   {
+      "id":18,
       "superhero":"Cyclops", 
       "publisher":"Marvel Comics", 
       "alter_ego":"Scott Summers",
       "first_appearance":"X-Men #1",
-      "characters":"Scott Summers"
+      "characters":"Scott Summers",
+      "bookmark": false
   },
   {
+      "id":19,
       "superhero":"Silver Surfer", 
       "publisher":"Marvel Comics", 
       "alter_ego":"Norrin Radd",
       "first_appearance":"The Fantastic Four #48",
-      "characters":"Norrin Radd"
+      "characters":"Norrin Radd",
+      "bookmark": false
   }
 ]
