@@ -1,6 +1,6 @@
 <template>
-  <v-flex sm6 md6 lg4 pa-2 hero-card :class="{ 'hero-card--marvel' : hero.publisher == 'Marvel Comics', 'hero-card--dc' : hero.publisher == 'DC Comics' }">
-    <v-card>
+  <v-flex sm6 md6 lg4 pa-2>
+    <v-card hero-card :class="{ 'hero-card--marvel' : hero.publisher == 'Marvel Comics', 'hero-card--dc' : hero.publisher == 'DC Comics' }">
       <v-card-title>
         <h2 class="text-truncate">{{ hero.superhero }}</h2>
       </v-card-title>
@@ -14,8 +14,9 @@
         <v-btn icon>
           <v-icon color="black" @click="removeHeroAction(hero)">delete</v-icon>
         </v-btn>
-        <v-btn icon>
-          <v-icon color="grey" class="text--darken-3">edit</v-icon>
+        <v-btn icon @click.stop="showDialog = true">
+          <v-icon>edit</v-icon>
+          <EditHero v-model="showDialog" :hero="hero" @close="handleClose($event)"/>
         </v-btn>
         <v-spacer></v-spacer>
         <v-btn icon @click="changeFavoriteStatusAction(hero)">
@@ -27,10 +28,22 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
+import EditHero from '@/components/EditHero'
 export default {
   name: 'HeroCard',
+  components: {
+    EditHero
+  },
   props: {
-    hero: { type: Object, default: null }
+    hero: {
+      type: Object,
+      default: null
+    }
+  },
+  data () {
+    return {
+      showDialog: false
+    }
   },
   methods: {
     ...mapActions([

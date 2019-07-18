@@ -32,13 +32,13 @@ export default new Vuex.Store({
         state.marvel[marvelIndex].bookmark = !hero.bookmark
       }
     },
-    UPDATE_HERO (state, hero) {
-      if (hero.publisher === 'DC Comics') {
-        var dcIndex = state.dc.findIndex(heroes => heroes.id === hero.id)
-        state.dc.splice(dcIndex, 1)
-      } else if (hero.publisher === 'Marvel Comics') {
-        var marvelIndex = state.marvel.findIndex(heroes => heroes.id === hero.id)
-        state.marvel.splice(marvelIndex, 1)
+    UPDATE_HERO (state, localHero) {
+      if (localHero.publisher === 'DC Comics') {
+        var dcIndex = state.dc.findIndex(heroes => heroes.id === localHero.id)
+        state.dc.splice(dcIndex, 1, localHero)
+      } else if (localHero.publisher === 'Marvel Comics') {
+        var marvelIndex = state.marvel.findIndex(heroes => heroes.id === localHero.id)
+        state.marvel.splice(marvelIndex, 1, localHero)
       }
     },
     DELETE_HERO (state, hero) {
@@ -53,8 +53,7 @@ export default new Vuex.Store({
   },
   getters: {
     getDcHeroes: state => state.dc,
-    getMarvelHeroes: state => state.marvel,
-    getFavoriteStatus: state => state.favoriteStatus
+    getMarvelHeroes: state => state.marvel
   },
   actions: {
     addHeroAction (context, hero) {
@@ -63,8 +62,8 @@ export default new Vuex.Store({
     changeFavoriteStatusAction (context, hero) {
       context.commit('TOGGLE_BOOKMARK', hero)
     },
-    updateHeroAction (context, hero) {
-      context.commit('UPDATE_HERO', hero)
+    updateHeroAction (context, localHero) {
+      context.commit('UPDATE_HERO', localHero)
     },
     removeHeroAction (context, hero) {
       context.commit('DELETE_HERO', hero)
