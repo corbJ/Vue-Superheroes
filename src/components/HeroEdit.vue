@@ -30,7 +30,10 @@
               v-model="localHero.characters"
             ></v-text-field>
         </v-card-text>
-        <v-card-actions :class="{ 'hc-dialog--marvel' : hero.publisher == 'Marvel Comics', 'hc-dialog--dc' : hero.publisher == 'DC Comics' }" class="mt-2">
+        <v-card-actions
+          :class="{ 'hc-dialog--marvel' : hero.publisher == 'Marvel Comics', 'hc-dialog--dc' : hero.publisher == 'DC Comics' }"
+          class="mt-2"
+        >
           <v-btn flat @click="onCancel (); show = false">
             <v-icon left>cancel</v-icon>
             Cancel
@@ -53,6 +56,13 @@
 import _ from 'lodash'
 import { mapActions } from 'vuex'
 export default {
+  // -----------------------------------------------------
+  // Using v-model is incorrect in this case in my opinion
+  // :value and @input should be used since we do not want
+  // the input to update the modal's parent data.
+  // Populate the input on load and clear inputs on cancel
+  // Update the data once the form is submitted not before
+  // -----------------------------------------------------
   name: 'HeroEdit',
   props: {
     value: Boolean,
