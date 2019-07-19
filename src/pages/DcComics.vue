@@ -14,7 +14,7 @@ export default {
     HeroCard,
     AddButton
   },
-  name: 'DcHeroes',
+  name: 'DcComics',
   computed: {
     ...mapGetters({
       dcHeroList: 'getDcHeroes'

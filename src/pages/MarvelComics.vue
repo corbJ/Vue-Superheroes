@@ -1,9 +1,6 @@
 <template>
   <v-layout row wrap>
-    <HeroCard v-for="hero in dcHeroList" :key="hero.id" :hero="hero">
-    </HeroCard>
-    <HeroCard v-for="hero in marvelHeroList" :key="hero.id" :hero="hero">
-    </HeroCard>
+    <HeroCard v-for="hero in marvelHeroList" :key="hero.id" :hero="hero"></HeroCard>
     <AddButton />
   </v-layout>
 </template>
@@ -17,10 +14,9 @@ export default {
     HeroCard,
     AddButton
   },
-  name: 'Home',
+  name: 'MarvelComics',
   computed: {
     ...mapGetters({
-      dcHeroList: 'getDcHeroes',
       marvelHeroList: 'getMarvelHeroes'
     })
   }

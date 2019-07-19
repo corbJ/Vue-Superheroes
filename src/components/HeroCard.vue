@@ -16,7 +16,7 @@
         </v-btn>
         <v-btn icon @click.stop="showDialog = true">
           <v-icon>edit</v-icon>
-          <EditHero v-model="showDialog" :hero="hero" @close="handleClose($event)"/>
+          <HeroEdit v-model="showDialog" :hero="hero" @close="handleClose($event)"/>
         </v-btn>
         <v-spacer></v-spacer>
         <v-btn icon @click="changeFavoriteStatusAction(hero)">
@@ -28,11 +28,11 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import EditHero from '@/components/EditHero'
+import HeroEdit from '@/components/HeroEdit'
 export default {
   name: 'HeroCard',
   components: {
-    EditHero
+    HeroEdit
   },
   props: {
     hero: {

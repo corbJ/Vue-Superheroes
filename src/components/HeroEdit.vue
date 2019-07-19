@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="show" max-width="400">
     <v-form
-      @submit.prevent="updateHeroAction(hero)"
+      @submit.prevent="onSave"
     >
       <v-card class="hc-dialog">
         <v-card-title class="pb-0">
@@ -31,14 +31,15 @@
             ></v-text-field>
         </v-card-text>
         <v-card-actions :class="{ 'hc-dialog--marvel' : hero.publisher == 'Marvel Comics', 'hc-dialog--dc' : hero.publisher == 'DC Comics' }" class="mt-2">
-          <v-btn flat @click="show = false">
+          <v-btn flat @click="onCancel (); show = false">
             <v-icon left>cancel</v-icon>
             Cancel
           </v-btn>
           <v-spacer></v-spacer>
           <v-btn
             flat
-            @click="updateHeroAction(localHero) ; show = false"
+            type="submit"
+            @click="onSave (); show = false"
           >Save
             <v-icon right>save</v-icon>
           </v-btn>
@@ -52,7 +53,7 @@
 import _ from 'lodash'
 import { mapActions } from 'vuex'
 export default {
-  name: 'EditHero',
+  name: 'HeroEdit',
   props: {
     value: Boolean,
     hero: {
@@ -60,15 +61,13 @@ export default {
       default: null
     }
   },
+  mounted () {
+    this.localHero = _.cloneDeep(this.hero)
+  },
   data () {
     return {
-      // localHero: JSON.parse(JSON.stringify(this.hero))
-      // this.localHero = _.cloneDeep(this.hero)
       localHero: {}
     }
-  },
-  created () {
-    this.localHero = _.cloneDeep(this.hero)
   },
   computed: {
     show: {
@@ -83,7 +82,13 @@ export default {
   methods: {
     ...mapActions([
       'updateHeroAction'
-    ])
+    ]),
+    onCancel () {
+      this.localHero = _.cloneDeep(this.hero)
+    },
+    onSave () {
+      this.updateHeroAction(_.cloneDeep(this.localHero))
+    }
   }
 }
 </script>

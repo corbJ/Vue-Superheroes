@@ -3,9 +3,9 @@ import Router from 'vue-router'
 
 // Files & Components
 
-import Home from '@/pages/Home'
-import DcHeroes from '@/pages/DcHeroes'
-import MarvelHeroes from '@/pages/MarvelHeroes'
+import HomePage from '@/pages/HomePage'
+import DcComics from '@/pages/DcComics'
+import MarvelComics from '@/pages/MarvelComics'
 
 Vue.use(Router)
 
@@ -13,20 +13,20 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home,
+      name: 'HomePage',
+      component: HomePage,
       meta: { bodyClass: 'home' }
     },
     {
       path: '/dc-heroes',
-      name: 'DcHeroes',
-      component: DcHeroes,
+      name: 'DcComics',
+      component: DcComics,
       meta: { bodyClass: 'dc' }
     },
     {
       path: '/marvel-heroes',
-      name: 'MarvelHeroes',
-      component: MarvelHeroes,
+      name: 'MarvelComics',
+      component: MarvelComics,
       meta: { bodyClass: 'marvel' }
     }
   ]
